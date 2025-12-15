@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow Support Chat | Support Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chat-page {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #000000;
+        }
+        
+        .chat-container {
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .chat-container h1 {
+            font-size: 2.5rem;
+            color: #228B22;
+            margin-bottom: 1rem;
+        }
+        
+        .chat-container p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #228B22;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 2rem;
+            border: 1px solid #228B22;
+        }
+        
+        .back-btn:hover {
+            background: #228B22;
+            color: white;
+        }
+        
+        .platform-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #228B22 0%, #000000 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* ServiceNow Chat Button Customization */
+        .sn-widget-button {
+            background-color: #228B22 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Support Hub</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#support">Support Options</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="chat-page">
+            <div class="chat-container">
+                <span class="platform-badge">ServiceNow Chat</span>
+                <h1>ServiceNow IT Support</h1>
+                <p>Welcome to our ServiceNow support channel. Connect with our IT team for technical assistance, incident reporting, and service requests.</p>
+                <p><strong>The chat widget will appear in the bottom-right corner once configured.</strong></p>
+                <p>Click the chat button to start a conversation with our IT support team.</p>
+                <a href="index.html" class="back-btn">← Back to Support Options</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Support Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- ServiceNow Virtual Agent / Chat Integration -->
+    <script>
+        // ServiceNow Virtual Agent Configuration
+        // Replace these values with your ServiceNow instance details
+        
+        (function() {
+            // ServiceNow instance configuration
+            var snConfig = {
+                instanceUrl: 'https://YOUR_INSTANCE.service-now.com', // Your ServiceNow instance URL
+                sysparmTopicId: 'YOUR_TOPIC_ID', // Your Virtual Agent Topic ID
+                topicName: 'YOUR_TOPIC_NAME', // Your topic name
+                // Additional configuration options
+                theme: 'modern',
+                position: 'bottom-right',
+                autoOpen: false,
+                primaryColor: '#228B22'
+            };
+            
+            // Load ServiceNow Virtual Agent script
+            var script = document.createElement('script');
+            script.src = snConfig.instanceUrl + '/scripts/va-widget.js';
+            script.setAttribute('data-instance-url', snConfig.instanceUrl);
+            script.setAttribute('data-sysparm-topic-id', snConfig.sysparmTopicId);
+            script.setAttribute('data-topic-name', snConfig.topicName);
+            script.setAttribute('data-theme', snConfig.theme);
+            script.setAttribute('data-position', snConfig.position);
+            script.setAttribute('data-auto-open', snConfig.autoOpen);
+            script.setAttribute('data-primary-color', snConfig.primaryColor);
+            
+            document.body.appendChild(script);
+        })();
+        
+        // Alternative: ServiceNow Connect Chat
+        // Uncomment and configure if using Connect Chat instead of Virtual Agent
+        /*
+        window.addEventListener('DOMContentLoaded', function() {
+            window.snChat = {
+                apiUrl: 'https://YOUR_INSTANCE.service-now.com/api/now/conversation',
+                sessionToken: 'YOUR_SESSION_TOKEN',
+                config: {
+                    widgetPosition: 'bottom-right',
+                    primaryColor: '#228B22',
+                    title: 'IT Support Chat',
+                    subtitle: 'We\'re here to help'
+                }
+            };
+            
+            var chatScript = document.createElement('script');
+            chatScript.src = 'https://YOUR_INSTANCE.service-now.com/scripts/sn-connect-chat.js';
+            document.body.appendChild(chatScript);
+        });
+        */
+    </script>
+</body>
+</html>

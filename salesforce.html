@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Support Chat | Support Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chat-page {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #000000;
+        }
+        
+        .chat-container {
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .chat-container h1 {
+            font-size: 2.5rem;
+            color: #228B22;
+            margin-bottom: 1rem;
+        }
+        
+        .chat-container p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #228B22;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 2rem;
+            border: 1px solid #228B22;
+        }
+        
+        .back-btn:hover {
+            background: #228B22;
+            color: white;
+        }
+        
+        .platform-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #228B22 0%, #000000 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Support Hub</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#support">Support Options</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="chat-page">
+            <div class="chat-container">
+                <span class="platform-badge">Salesforce Chat</span>
+                <h1>Salesforce Support</h1>
+                <p>Welcome to our Salesforce support channel. Our team is ready to assist you with customer service inquiries, account management, and general questions.</p>
+                <p><strong>The chat widget will appear in the bottom-right corner once configured.</strong></p>
+                <p>Click the chat button to start a conversation with our support team.</p>
+                <a href="index.html" class="back-btn">← Back to Support Options</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Support Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Salesforce Chat Integration -->
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true;
+            embedded_svc.settings.language = '';
+
+            // Settings for Chat
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+
+            embedded_svc.init(
+                'https://YOUR_ORG.my.salesforce.com', // Your Salesforce org URL
+                'https://YOUR_SITE.force.com/liveAgentSetupFlow', // Your community URL
+                gslbBaseURL,
+                'YOUR_ORG_ID', // Your Salesforce organization ID (18 characters)
+                'YOUR_DEPLOYMENT_NAME', // Your chat deployment name
+                {
+                    baseLiveAgentContentURL: 'https://c.la1-c2-cdg.salesforceliveagent.com/content',
+                    deploymentId: 'YOUR_DEPLOYMENT_ID',
+                    buttonId: 'YOUR_BUTTON_ID',
+                    baseLiveAgentURL: 'https://d.la1-c2-cdg.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'YOUR_ESW_LIVE_AGENT_DEV_NAME',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
+
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://YOUR_ORG.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
+</body>
+</html>

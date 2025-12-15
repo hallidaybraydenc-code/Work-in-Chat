@@ -1,0 +1,15 @@
+name: Auto Update Notify
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show latest commit
+        run: |
+          echo "Pushed by $GITHUB_ACTOR"
+          git --no-pager log -1 --pretty=format:"%h - %s (%an)"

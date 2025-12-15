@@ -1,0 +1,334 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #000000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+header {
+    background: linear-gradient(135deg, #228B22 0%, #000000 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #228B22 0%, #000000 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Support Options Section */
+.support-section {
+    padding: 80px 20px;
+    background: #000000;
+}
+
+.support-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #228B22;
+}
+
+.support-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 3rem;
+}
+
+.support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.support-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(34, 139, 34, 0.3);
+    border: 1px solid #228B22;
+}
+
+.support-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(34, 139, 34, 0.5);
+    border-color: #2eb82e;
+}
+
+.support-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    color: #228B22;
+}
+
+.support-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.support-card h3 {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.support-card p {
+    font-size: 1rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.support-btn {
+    background: linear-gradient(135deg, #228B22 0%, #000000 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.support-btn:hover {
+    opacity: 0.9;
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 80px 20px;
+    background: #0a0a0a;
+}
+
+.resources-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #228B22;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resource-item {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(34, 139, 34, 0.2);
+    border: 1px solid #228B22;
+    transition: transform 0.3s ease;
+}
+
+.resource-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(34, 139, 34, 0.4);
+}
+
+.resource-item h4 {
+    font-size: 1.3rem;
+    color: #228B22;
+    margin-bottom: 0.5rem;
+}
+
+.resource-item p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    background: #000000;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #228B22;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #228B22;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #228B22;
+}
+
+/* Salesforce Chat Button Customization */
+.embeddedServiceHelpButton .helpButton .uiButton {
+    background-color: #228B22;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.embeddedServiceHelpButton .helpButton .uiButton:focus {
+    outline: 1px solid #228B22;
+}
+
+.embeddedServiceHelpButton .helpButton .helpButtonEnabled:hover::before,
+.embeddedServiceHelpButton .helpButton .helpButtonEnabled:focus::before {
+    background-color: #1e7a1e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .support-options {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .support-section h2,
+    .resources-section h2,
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    nav h1 {
+        font-size: 1.4rem;
+    }
+
+    .support-section,
+    .resources-section,
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .support-card {
+        padding: 2rem;
+    }
+}
